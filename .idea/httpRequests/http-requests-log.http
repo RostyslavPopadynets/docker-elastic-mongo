@@ -1,0 +1,646 @@
+POST http://localhost:8091/protocols/createOrUpdateDocument
+Content-Type: Application/json
+Content-Length: 71
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2023-01-23T141822.500.json
+
+###
+
+POST http://localhost:8091/protocols/createOrUpdateDocument
+Content-Type: Application/json
+Content-Length: 71
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2023-01-20T162726.500.json
+
+###
+
+POST http://localhost:8091/protocols/createOrUpdateDocument
+Content-Type: Application/json
+Content-Length: 71
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2023-01-20T161646.500.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+Content-Length: 71
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2023-01-20T161408.500.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+Content-Length: 71
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2023-01-20T160047.500.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-14T103336.201.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-14T103155.201.json
+
+###
+
+GET http://localhost:8090/protocols/639989ebc824c7320bb2da3e
+
+<> 2022-12-14T103146.200.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-14T103139.201.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-14T102913.500.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-14T102825.500.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-14T102755.201.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-14T102634.500.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-14T101530.500.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T170030.500.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T170028.500.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T170026.500.json
+
+###
+
+GET http://localhost:8090/protocols/639881ca57de8c450da8f02c
+
+<> 2022-12-13T154449.200.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T154443.201.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T153443.201.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T153347.500.json
+
+###
+
+POST http://localhost:8090/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T152512.500.json
+
+###
+
+POST http://localhost:8080/protocols/createOrUpdateDocument
+Content-Type: Application/json
+
+{
+  "id": "639878cb6cba6074c8ca9974",
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T151019.200.txt
+
+###
+
+POST http://localhost:8080/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T150619.500.json
+
+###
+
+POST http://localhost:8080/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T150323.500.json
+
+###
+
+POST http://localhost:8080/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T150235.500.json
+
+###
+
+POST http://localhost:8080/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T150042.500.json
+
+###
+
+POST http://localhost:8080/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T145709.500.json
+
+###
+
+POST http://localhost:8080/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T145611.500.json
+
+###
+
+POST http://localhost:8080/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T145341.500.json
+
+###
+
+POST http://localhost:8080/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T145220.201.json
+
+###
+
+POST http://localhost:8080/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T145203.500.json
+
+###
+
+POST http://localhost:8080/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T145027.500.json
+
+###
+
+POST http://localhost:8080/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T144942.500.json
+
+###
+
+POST http://localhost:8080/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T144526.500.json
+
+###
+
+POST http://localhost:8080/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T144436.500.json
+
+###
+
+POST http://localhost:8080/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T144302.500.json
+
+###
+
+GET http://localhost:8080/protocols/getDocument?protocolId=6393478a4882b56e00fab50b
+
+<> 2022-12-13T142439.200.json
+
+###
+
+POST http://localhost:8080/protocols/createOrUpdateDocument
+Content-Type: Application/json
+
+{
+  "id": "6393478a4882b56e00fab50b",
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T142343.200.txt
+
+###
+
+POST http://localhost:8080/protocols/createOrUpdateDocument
+Content-Type: Application/json
+
+{
+  "id": "6393478a4882b56e00fab50b",
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T140823.500.json
+
+###
+
+POST http://localhost:8080/protocols/createOrUpdateDocument
+Content-Type: Application/json
+
+{
+  "id": "6393478a4882b56e00fab50b",
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T140420.500.json
+
+###
+
+POST http://localhost:8080/protocols/createOrUpdateDocument
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T140307.500.json
+
+###
+
+POST http://localhost:8080/protocols/createOrUpdateDocument
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T140153.500.json
+
+###
+
+POST http://localhost:8080/protocols/createOrUpdateDocument
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T140123.500.json
+
+###
+
+POST http://localhost:8080/protocols/createOrUpdateDocument
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T140031.500.json
+
+###
+
+POST http://localhost:8080/createOrUpdateDocument
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T140021.404.json
+
+###
+
+POST http://localhost:8080/createOrUpdateDocument
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T140018.404.json
+
+###
+
+POST http://localhost:8080/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+<> 2022-12-13T140005.404.json
+
+###
+
+GET http://localhost:8080/protocols/6393478a4882b56e00fab50b2
+
+<> 2022-12-09T163715.500.json
+
+###
+
+POST http://localhost:8080/protocols
+Content-Type: Application/json
+
+{
+  "name": "My protocol name",
+  "author": "It's still me",
+  "version": "1.0"
+}
+
+<> 2022-12-09T163712.201.json
+
+###
+

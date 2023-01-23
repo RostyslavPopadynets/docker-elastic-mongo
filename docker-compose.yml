@@ -1,0 +1,71 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo
+    restart: unless-stopped
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - data:/data
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.3.2
+    environment:
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - "9200:9200"
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.3.2
+    ports:
+      - "5601:5601"
+
+  rest-mongo:
+    image: rest-mongo:latest
+    container_name: rest-mongo
+    build:
+      context: rest-mongo
+      dockerfile: Dockerfile
+    depends_on:
+      - rest-elasticsearch
+    links:
+      - mongodb
+    environment:
+      - JAVA_OPTS=-Dspring.data.mongodb.host=mongodb
+    ports:
+      - "8090:8090"
+      - "5001:5001"
+    restart: unless-stopped
+
+  rest-elasticsearch:
+    image: rest-elasticsearch:latest
+    container_name: rest-elasticsearch
+    build:
+      context: rest-elasticsearch
+      dockerfile: Dockerfile
+    links:
+      - elasticsearch
+    ports:
+      - "8091:8091"
+      - "5002:5002"
+    restart: unless-stopped
+
+volumes:
+  data: {}
+  es_data:
+    driver: local
+
+networks:
+  elastic:
+    name: elastic
+    driver: bridge

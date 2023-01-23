@@ -1,0 +1,12 @@
+### Create a new protocol
+POST http://localhost:8091/protocols/createOrUpdateDocument
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+### Get a protocol by id
+GET http://localhost:8090/protocols/639989ebc824c7320bb2da3e

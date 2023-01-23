@@ -1,0 +1,6 @@
+{
+  "timestamp": "2022-12-14T08:26:34.172+00:00",
+  "status": 500,
+  "error": "Internal Server Error",
+  "path": "/protocols"
+}

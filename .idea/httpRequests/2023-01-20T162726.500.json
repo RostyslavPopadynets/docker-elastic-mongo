@@ -1,0 +1,6 @@
+{
+  "timestamp": "2023-01-20T14:27:26.150+00:00",
+  "status": 500,
+  "error": "Internal Server Error",
+  "path": "/protocols/createOrUpdateDocument"
+}

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.mongodb:bson-record-codec:4.8.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/bson-record-codec/4.8.0/5c4f81e2998a201466188c978642179f41dd3dfb/bson-record-codec-4.8.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/bson-record-codec/4.8.0/e34dd3fafbb6b56d0e38b9f95d3ad11d833c7a6f/bson-record-codec-4.8.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
