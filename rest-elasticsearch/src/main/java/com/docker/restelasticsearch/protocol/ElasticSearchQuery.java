@@ -25,7 +25,6 @@ public class ElasticSearchQuery {
   private final String indexName = "protocols";
 
   public String createOrUpdateDocument(Protocol protocol) throws IOException {
-
     IndexResponse response = elasticsearchClient.index(i -> i
         .index(indexName)
         .id(protocol.getId())

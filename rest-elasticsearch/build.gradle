@@ -14,17 +14,10 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
-	implementation 'org.elasticsearch:elasticsearch'
-	implementation 'org.elasticsearch.client:elasticsearch-rest-client'
-	implementation 'org.elasticsearch.client:elasticsearch-rest-high-level-client:7.17.3'
-	implementation 'org.springframework.data:spring-data-elasticsearch'
-	implementation 'org.elasticsearch:elasticsearch-yarn:5.3.0'
-	implementation 'org.springframework.data:spring-data-elasticsearch'
-	implementation 'co.elastic.clients:elasticsearch-java'
-	implementation 'com.fasterxml.jackson.core:jackson-databind'
 	implementation 'org.projectlombok:lombok:1.18.24'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'co.elastic.clients:elasticsearch-java:8.6.0'
+	implementation 'org.springframework.data:spring-data-elasticsearch:5.0.1'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

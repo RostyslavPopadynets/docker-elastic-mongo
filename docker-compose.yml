@@ -13,22 +13,29 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=root
 
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:6.3.2
+    image: elasticsearch:8.2.2
+    restart: unless-stopped
     environment:
-      - cluster.name=docker-cluster
-      - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+      - xpack.security.enabled=false
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
     ports:
-      - "9200:9200"
+      - target: 9200
+        published: 9200
+    networks:
+      - elastic
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:6.3.2
+    image: kibana:8.2.2
     ports:
-      - "5601:5601"
+      - target: 5601
+        published: 5601
+    depends_on:
+      - elasticsearch
+    networks:
+      - elastic
 
   rest-mongo:
     image: rest-mongo:latest
@@ -36,29 +43,29 @@ services:
     build:
       context: rest-mongo
       dockerfile: Dockerfile
-    depends_on:
-      - rest-elasticsearch
+#    depends_on:
+#      - rest-elasticsearch
     links:
       - mongodb
-    environment:
-      - JAVA_OPTS=-Dspring.data.mongodb.host=mongodb
+#    environment:
+#      - JAVA_OPTS=-Dspring.data.mongodb.host=mongodb
     ports:
       - "8090:8090"
       - "5001:5001"
     restart: unless-stopped
 
-  rest-elasticsearch:
-    image: rest-elasticsearch:latest
-    container_name: rest-elasticsearch
-    build:
-      context: rest-elasticsearch
-      dockerfile: Dockerfile
-    links:
-      - elasticsearch
-    ports:
-      - "8091:8091"
-      - "5002:5002"
-    restart: unless-stopped
+#  rest-elasticsearch:
+#    image: rest-elasticsearch:latest
+#    container_name: rest-elasticsearch
+#    build:
+#      context: rest-elasticsearch
+#      dockerfile: Dockerfile
+#    links:
+#      - elasticsearch
+#    ports:
+#      - "8091:8091"
+#      - "5002:5002"
+#    restart: unless-stopped
 
 volumes:
   data: {}

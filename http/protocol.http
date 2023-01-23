@@ -1,5 +1,5 @@
 ### Create a new protocol
-POST http://localhost:8091/protocols/createOrUpdateDocument
+POST http://localhost:8090/protocols
 Content-Type: Application/json
 
 {
