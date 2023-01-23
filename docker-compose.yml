@@ -43,29 +43,29 @@ services:
     build:
       context: rest-mongo
       dockerfile: Dockerfile
-#    depends_on:
-#      - rest-elasticsearch
+    depends_on:
+      - rest-elasticsearch
     links:
       - mongodb
-#    environment:
-#      - JAVA_OPTS=-Dspring.data.mongodb.host=mongodb
+    environment:
+      - JAVA_OPTS=-Dspring.data.mongodb.host=mongodb
     ports:
       - "8090:8090"
       - "5001:5001"
     restart: unless-stopped
 
-#  rest-elasticsearch:
-#    image: rest-elasticsearch:latest
-#    container_name: rest-elasticsearch
-#    build:
-#      context: rest-elasticsearch
-#      dockerfile: Dockerfile
-#    links:
-#      - elasticsearch
-#    ports:
-#      - "8091:8091"
-#      - "5002:5002"
-#    restart: unless-stopped
+  rest-elasticsearch:
+    image: rest-elasticsearch:latest
+    container_name: rest-elasticsearch
+    build:
+      context: rest-elasticsearch
+      dockerfile: Dockerfile
+    links:
+      - elasticsearch
+    ports:
+      - "8091:8091"
+      - "5002:5002"
+    restart: unless-stopped
 
 volumes:
   data: {}
