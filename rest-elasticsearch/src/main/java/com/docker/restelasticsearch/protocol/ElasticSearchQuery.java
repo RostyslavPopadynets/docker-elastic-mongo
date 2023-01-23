@@ -22,65 +22,44 @@ public class ElasticSearchQuery {
 
   private final ElasticsearchClient elasticsearchClient;
 
-  private final String indexName = "protocols";
+  private static final String INDEX_NAME = "protocols";
 
-  public String createOrUpdateDocument(Protocol protocol) throws IOException {
+  public String createOrUpdateProtocol(Protocol protocol) throws IOException {
     IndexResponse response = elasticsearchClient.index(i -> i
-        .index(indexName)
+        .index(INDEX_NAME)
         .id(protocol.getId())
         .document(protocol)
     );
-    if(response.result().name().equals("Created")){
-      return new StringBuilder("Document has been successfully created.").toString();
-    }else if(response.result().name().equals("Updated")){
-      return new StringBuilder("Document has been successfully updated.").toString();
+    if (response.result().name().equals("Created")) {
+      return "Protocol has been successfully created.";
+    } else if (response.result().name().equals("Updated")) {
+      return "Protocol has been successfully updated.";
     }
-    return new StringBuilder("Error while performing the operation.").toString();
+    return "Error while performing the operation.";
   }
 
-  public Protocol getDocumentById(String protocolId) throws IOException{
-    Protocol product = null;
-    GetResponse<Protocol> response = elasticsearchClient.get(g -> g
-                                                                .index(indexName)
-                                                                .id(protocolId),
-                                                                Protocol.class
-    );
-
-    if (response.found()) {
-      product = response.source();
-      System.out.println("Product name " + product.getName());
-    } else {
-      System.out.println ("Product not found");
-    }
-
-    return product;
+  public Protocol getProtocolById(String protocolId) throws IOException {
+    GetResponse<Protocol> response =
+        elasticsearchClient.get(g -> g.index(INDEX_NAME).id(protocolId), Protocol.class);
+    return response.found() ? response.source() : null;
   }
 
-  public String deleteDocumentById(String productId) throws IOException {
-
-    DeleteRequest request = DeleteRequest.of(d -> d.index(indexName).id(productId));
+  public String deleteProtocolById(String productId) throws IOException {
+    DeleteRequest request = DeleteRequest.of(d -> d.index(INDEX_NAME).id(productId));
 
     DeleteResponse deleteResponse = elasticsearchClient.delete(request);
     if (Objects.nonNull(deleteResponse.result()) && !deleteResponse.result().name().equals("NotFound")) {
-      return new StringBuilder("Product with id " + deleteResponse.id() + " has been deleted.").toString();
+      return "Protocol with id " + deleteResponse.id() + " has been deleted.";
     }
-    System.out.println("Product not found");
-    return new StringBuilder("Product with id " + deleteResponse.id()+" does not exist.").toString();
-
+    return "Protocol with id " + deleteResponse.id() + " does not exist.";
   }
 
-  public  List<Protocol> searchAllDocuments() throws IOException {
-
-    SearchRequest searchRequest =  SearchRequest.of(s -> s.index(indexName));
-    SearchResponse searchResponse =  elasticsearchClient.search(searchRequest, Protocol.class);
-    List<Hit> hits = searchResponse.hits().hits();
+  public List<Protocol> searchAllProtocols() throws IOException {
+    SearchRequest searchRequest = SearchRequest.of(s -> s.index(INDEX_NAME));
+    SearchResponse<Protocol> searchResponse = elasticsearchClient.search(searchRequest, Protocol.class);
+    List<Hit<Protocol>> hits = searchResponse.hits().hits();
     List<Protocol> products = new ArrayList<>();
-    for(Hit object : hits){
-
-      System.out.print(((Protocol) object.source()));
-      products.add((Protocol) object.source());
-
-    }
+    hits.forEach(h -> products.add(h.source()));
     return products;
   }
 }

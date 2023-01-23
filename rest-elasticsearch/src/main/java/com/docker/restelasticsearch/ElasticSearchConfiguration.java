@@ -11,10 +11,14 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ElasticSearchConfiguration {
+
+  private static final String HOST_NAME = "localhost";
+  private static final int PORT = 9200;
+  private static final String SCHEMA = "http";
+
   @Bean
   public RestClient getRestClient() {
-    return RestClient.builder(
-        new HttpHost("localhost", 9200)).build();
+    return RestClient.builder(new HttpHost(HOST_NAME, PORT, SCHEMA)).build();
   }
 
   @Bean
@@ -22,7 +26,6 @@ public class ElasticSearchConfiguration {
     return new RestClientTransport(
         getRestClient(), new JacksonJsonpMapper());
   }
-
 
   @Bean
   public ElasticsearchClient getElasticsearchClient(){

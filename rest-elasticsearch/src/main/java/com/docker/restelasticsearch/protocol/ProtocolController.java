@@ -5,10 +5,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
@@ -21,27 +21,27 @@ public class ProtocolController {
 
   private final ElasticSearchQuery elasticSearchQuery;
 
-  @PostMapping("/createOrUpdateDocument")
-  public ResponseEntity<Object> createOrUpdateDocument(@RequestBody Protocol product) throws IOException {
-    String response = elasticSearchQuery.createOrUpdateDocument(product);
+  @PostMapping("/createOrUpdateProtocol")
+  public ResponseEntity<String> createOrUpdateProtocol(@RequestBody Protocol protocol) throws IOException {
+    String response = elasticSearchQuery.createOrUpdateProtocol(protocol);
     return new ResponseEntity<>(response, HttpStatus.OK);
   }
 
-  @GetMapping("/getDocument")
-  public ResponseEntity<Object> getDocumentById(@RequestParam String productId) throws IOException {
-    Protocol product =  elasticSearchQuery.getDocumentById(productId);
-    return new ResponseEntity<>(product, HttpStatus.OK);
+  @GetMapping("/getProtocol/{id}")
+  public ResponseEntity<Protocol> getProtocolById(@PathVariable String id) throws IOException {
+    Protocol protocol = elasticSearchQuery.getProtocolById(id);
+    return new ResponseEntity<>(protocol, HttpStatus.OK);
   }
 
-  @DeleteMapping("/deleteDocument")
-  public ResponseEntity<Object> deleteDocumentById(@RequestParam String productId) throws IOException {
-    String response =  elasticSearchQuery.deleteDocumentById(productId);
+  @DeleteMapping("/deleteProtocol/{id}")
+  public ResponseEntity<String> deleteProtocolById(@PathVariable String id) throws IOException {
+    String response = elasticSearchQuery.deleteProtocolById(id);
     return new ResponseEntity<>(response, HttpStatus.OK);
   }
 
-  @GetMapping("/searchDocument")
-  public ResponseEntity<Object> searchAllDocument() throws IOException {
-    List<Protocol> products = elasticSearchQuery.searchAllDocuments();
+  @GetMapping("/searchProtocols")
+  public ResponseEntity<List<Protocol>> searchAllProtocols() throws IOException {
+    List<Protocol> products = elasticSearchQuery.searchAllProtocols();
     return new ResponseEntity<>(products, HttpStatus.OK);
   }
 }

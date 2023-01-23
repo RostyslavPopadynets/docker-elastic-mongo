@@ -19,13 +19,13 @@ public class ProtocolServiceImpl implements ProtocolService {
   public ProtocolDto create(ProtocolDto protocolDto) {
     Protocol protocolToSave = Protocol.builder().fromDto(protocolDto);
     Protocol savedProtocol = repository.save(protocolToSave);
-    restTemplate.postForObject(BASE_URL + "/createOrUpdateDocument", savedProtocol, String.class);
+    restTemplate.postForObject(BASE_URL + "/createOrUpdateProtocol", savedProtocol, String.class);
     return ProtocolDto.builder().fromEntity(savedProtocol);
   }
 
   @Override
   public ProtocolDto findById(String id) {
-    Protocol protocolFromElastic = restTemplate.getForObject(BASE_URL + "/getDocument/" + id, Protocol.class);
+    Protocol protocolFromElastic = restTemplate.getForObject(BASE_URL + "/getProtocol/" + id, Protocol.class);
     if (Objects.isNull(protocolFromElastic)) {
       throw new NullPointerException();
     }
