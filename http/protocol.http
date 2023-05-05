@@ -13,6 +13,7 @@ POST http://localhost:8091/protocols/createOrUpdateProtocol
 Content-Type: Application/json
 
 {
+  "id": "1",
   "name": "Protocol 1",
   "author": "Rostyslav",
   "version": "1.0"

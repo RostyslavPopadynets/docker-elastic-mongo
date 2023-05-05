@@ -4,6 +4,7 @@ import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.elasticsearch.core.DeleteRequest;
 import co.elastic.clients.elasticsearch.core.DeleteResponse;
 import co.elastic.clients.elasticsearch.core.GetResponse;
+import co.elastic.clients.elasticsearch.core.IndexResponse;
 import co.elastic.clients.elasticsearch.core.SearchRequest;
 import co.elastic.clients.elasticsearch.core.SearchResponse;
 import co.elastic.clients.elasticsearch.core.search.Hit;
@@ -24,16 +25,16 @@ public class ElasticSearchQuery {
   private static final String INDEX_NAME = "protocols";
 
   public String createOrUpdateProtocol(Protocol protocol) throws IOException {
-//    IndexResponse response = elasticsearchClient.index(i -> i
-//        .index(INDEX_NAME)
-//        .id(protocol.getId())
-//        .document(protocol)
-//    );
-//    if (response.result().name().equals("Created")) {
-//      return "Protocol has been successfully created.";
-//    } else if (response.result().name().equals("Updated")) {
-//      return "Protocol has been successfully updated.";
-//    }
+    IndexResponse response = elasticsearchClient.index(i -> i
+        .index(INDEX_NAME)
+        .id(protocol.getId())
+        .document(protocol)
+    );
+    if (response.result().name().equals("Created")) {
+      return "Protocol has been successfully created.";
+    } else if (response.result().name().equals("Updated")) {
+      return "Protocol has been successfully updated.";
+    }
     return "Error while performing the operation.";
   }
 
