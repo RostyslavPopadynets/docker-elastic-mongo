@@ -11,6 +11,8 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=root
+    networks:
+      - docker-services
 
   elasticsearch:
     image: elasticsearch:8.2.2
@@ -26,10 +28,11 @@ services:
       - target: 9200
         published: 9200
     networks:
-      - elastic
+      - docker-services
 
   kibana:
     image: kibana:8.2.2
+    container_name: kibana
     ports:
       - target: 5601
         published: 5601
@@ -38,7 +41,7 @@ services:
     depends_on:
       - elasticsearch
     networks:
-      - elastic
+      - docker-services
 
   rest-mongo:
     image: rest-mongo:latest
@@ -56,6 +59,8 @@ services:
       - "8090:8090"
       - "5001:5001"
     restart: unless-stopped
+    networks:
+      - docker-services
 
   rest-elasticsearch:
     image: rest-elasticsearch:latest
@@ -66,11 +71,13 @@ services:
     links:
       - elasticsearch
     environment:
-      - JAVA_OPTS=-Delastic.hostname=localhost
+      - JAVA_OPTS=-Delastic.hostname=elasticsearch
     ports:
       - "8091:8091"
       - "5002:5002"
     restart: unless-stopped
+    networks:
+      - docker-services
 
 volumes:
   data: {}
@@ -78,6 +85,6 @@ volumes:
     driver: local
 
 networks:
-  elastic:
-    name: elastic
+  docker-services:
+    name: docker-services
     driver: bridge
