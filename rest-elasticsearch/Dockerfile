@@ -9,6 +9,7 @@ COPY build/libs/rest-elasticsearch-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8091
 
 ENTRYPOINT java \
+    $JAVA_OPTS \
     -jar \
     app.jar
 

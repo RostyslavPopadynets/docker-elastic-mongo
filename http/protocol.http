@@ -1,5 +1,15 @@
-### Create a new protocol
+### Create a new protocol mongo
 POST http://localhost:8090/protocols
+Content-Type: Application/json
+
+{
+  "name": "Protocol 1",
+  "author": "Rostyslav",
+  "version": "1.0"
+}
+
+### Create a new protocol elastic
+POST http://localhost:8091/protocols/createOrUpdateProtocol
 Content-Type: Application/json
 
 {
